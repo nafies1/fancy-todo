@@ -42,7 +42,7 @@ class TodoController{
         })
             .then(todo=>{
                 console.log(todo)
-                res.status(200).json(todo)
+                res.status(200).json({todo, msg: "Success update"})
             })
             .catch(err=>{
                 next(err)
@@ -50,13 +50,13 @@ class TodoController{
     }
 
     static updateStatus(req, res, next){
-        const {id, name, description, status, budget_needed, due_date} = req.body
+        const {id, status} = req.body
+        let completed_date
+        if (status === 'Done') completed_date = new Date()
+        else completed_date = null
         Todo.findByIdAndUpdate(id, { 
-            name,
-            description,
             status,
-            budget_needed: budget_needed || 0,
-            due_date: due_date || null
+            completed_date 
         })
             .then(todo=>{
                 console.log(todo)
@@ -66,6 +66,7 @@ class TodoController{
                 next(err)
             })
     }
+    
 }
 
 module.exports = TodoController
