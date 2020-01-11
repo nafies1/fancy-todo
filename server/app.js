@@ -5,7 +5,8 @@ const app = express()
 const routes = require('./routes')
 const cors = require('cors')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/fancy_todo', {useNewUrlParser: true, useUnifiedTopology : true})
+mongoose.connect('mongodb://localhost/fancy_todo', {useNewUrlParser: true, useUnifiedTopology : true, })
+mongoose.set('useCreateIndex', true);
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error'))

@@ -2,10 +2,41 @@ const {OAuth2Client} = require('google-auth-library');
 const User = require('../models/user')
 const jwt = require('jsonwebtoken');
 
+class UserController{
 
+    static register(req, res, next){
+        const {name, email, password} = req.body
 
-module.exports = {
-    googleSign(req, res, next){        
+        User.create({
+            name,
+            email,
+            password,
+            register_date: new Date()
+        })
+            .then(user=>{
+                const idUser = user._id
+                const token = jwt.sign({ id: idUser }, process.env.SECRET);
+                res.status(201).json({token, msg: 'Register Success'})
+            })
+            .catch(err=>{
+                next(err)
+            })
+    }
+
+    static login(req, res, next){
+        // const {name, email, password} = req.body
+        const {email} = req.body
+
+        User.findOne({ email })
+            .then(user=>{
+                 res.status(200).json(user)
+            })
+            .catch(err=>{
+                next(err)
+            })
+    }
+
+    static googleSign(req, res, next){        
         let payload
         let status
         const client = new OAuth2Client(process.env.CLIENT_ID);
@@ -45,4 +76,7 @@ module.exports = {
                 next(err)
             })
     }
-}
+ 
+} // End of class User
+
+module.exports = UserController
