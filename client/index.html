@@ -1,27 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="google-signin-client_id" content="1097003901577-av29iroonolptv6tesao3ihf4ae0cqe3.apps.googleusercontent.com">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Fancy Todo</title>
-  </head>
-  <body>
-    <h1>Fancy Todo</h1>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <a href="#" onclick="signOut();">Sign out</a>
+</head>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+<body>
+    <!-- LOGIN FORM -->
+    <div id="login-form" class="d-nones"> <!-- <<<<<<<<<<<<<<<<<<<<< Login form >>>>>>>>>>>>>>>> -->
+      <div class="d-flex justify-content-center align-items-center login-container">
+        <form class="login-form text-center">
+            <h1 class="mb-5 font-weight-light text-uppercase">Login</h1>
+            <div class="form-group">
+                <input type="text" class="form-control rounded-pill form-control-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control rounded-pill form-control-lg" placeholder="Password">
+            </div>
+            <div class="forgot-link form-group d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">Remember Password</label>
+                </div>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Log in</button>
+            <p class="mt-3 font-weight-normal">Don't have an account? <a href="#"><strong>Register Now</strong></a><br>
+                <small>Or Sign In With Your Google Account</small> 
+            </p>
+            <!-- <p class="mt-3 font-weight-normal">Or Sign In With Your Google Account</a></p> -->
+            <div class="g-signin2 btn" data-width="320" data-longtitle="true" data-onsuccess="onSignIn"></div>
+            <!-- <a href="#" onclick="signOut();">Sign out</a>  -->
+         </form>
+      </div>
+    </div>
 
-  </body>
+    <!-- REGISTER FORM -->
+    <div id="register-form" class="d-none"> <!--<<<<<<<<<<<<<<<<<<<<< Register form >>>>>>>>>>>>>>>>-->
+      <div class="d-flex justify-content-center align-items-center login-container">
+        <form class="login-form text-center">
+            <h1 class="mb-5 font-weight-light text-uppercase">Register</h1>
+            <div class="form-group">
+              <input type="text" class="form-control rounded-pill form-control-lg" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control rounded-pill form-control-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control rounded-pill form-control-lg" placeholder="Password">
+            </div>
+            <div class="forgot-link form-group d-flex justify-content-between align-items-center">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn mt-3 rounded-pill btn-lg btn-custom btn-block text-uppercase">Register</button>
+            <p class="mt-3 font-weight-normal">Have an account? <a href="#"><strong>Sign In Now</strong></a></p>
+            <p class="mt-3 font-weight-normal">Or Sign In With Your Google Account</a></p>
+            <div class="g-signin2 btn" data-width="320" data-longtitle="true" data-onsuccess="onSignIn"></div>
+        </form>
+      </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+</body>
+
 </html>
