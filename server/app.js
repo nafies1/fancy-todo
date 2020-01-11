@@ -5,7 +5,9 @@ const app = express()
 const routes = require('./routes')
 const cors = require('cors')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/fancy_todo', {useNewUrlParser: true, useUnifiedTopology : true, })
+// mongoose.connect('mongodb://localhost/fancy_todo', {useNewUrlParser: true, useUnifiedTopology : true, })
+mongoose.connect(`mongodb+srv://nafies_beta1:${process.env.PASS}@cluster0-hcptc.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology : true, })
+
 mongoose.set('useCreateIndex', true);
 
 const db = mongoose.connection

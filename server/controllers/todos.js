@@ -24,6 +24,7 @@ class TodoController{
         Todo.find({})
             .then(todos=>{
                 console.log(todos)
+                if (!todos.length) todos = 'No todos available' 
                 res.status(200).json(todos)
             })
             .catch(err=>{
@@ -60,13 +61,24 @@ class TodoController{
         })
             .then(todo=>{
                 console.log(todo)
-                res.status(200).json(todo)
+                res.status(200).json({todo, msg: 'Update status success'})
             })
             .catch(err=>{
                 next(err)
             })
     }
     
+    static delete(req, res, next){
+        const {id} = req.body
+        Todo.findByIdAndDelete(id)
+            .then(todo=>{
+                console.log(todo)
+                res.status(200).json({todo, msg : 'Delete success'})
+            })
+            .catch(err=>{
+                next(err)
+            })
+    }
 }
 
 module.exports = TodoController

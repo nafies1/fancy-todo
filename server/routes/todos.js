@@ -5,6 +5,6 @@ router.post('/', Todo.create)
 router.get('/', Todo.showAll)
 router.put('/', Todo.update)
 router.patch('/', Todo.updateStatus)
-// router.delete('/', Todo.delete)
+router.delete('/', Todo.delete)
 
 module.exports = router
