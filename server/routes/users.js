@@ -7,4 +7,6 @@ router.post('/google-sign', User.googleSign)
 // router.patch('/', User.changePassword)
 // router.delete('/', User.deleteUser)
 
+// Change Password and Delete User would be done after whole system of App with minimum requirements works
+
 module.exports = router
