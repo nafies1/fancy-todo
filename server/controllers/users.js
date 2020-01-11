@@ -1,6 +1,7 @@
 const {OAuth2Client} = require('google-auth-library');
 const User = require('../models/user')
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs')
 
 class UserController{
 
@@ -24,12 +25,28 @@ class UserController{
     }
 
     static login(req, res, next){
-        // const {name, email, password} = req.body
-        const {email} = req.body
+        const {email, password} = req.body
+        // const {email} = req.body
 
         User.findOne({ email })
             .then(user=>{
-                 res.status(200).json(user)
+                let err = {
+                    message : 'Username / Password wrong'
+                }
+                if(user) {
+                    const authenticationResult = bcrypt.compareSync(password, user.password);
+                    if (authenticationResult) {
+                        const idUser = user._id
+                        const token = jwt.sign({ id: idUser }, process.env.SECRET);
+                        res.status(200).json({token, msg: 'Login Success'})
+                    } else {
+                        next(err)
+                    }      
+
+                } else {
+                    next(err)
+                }
+                
             })
             .catch(err=>{
                 next(err)

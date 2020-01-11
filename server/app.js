@@ -21,7 +21,7 @@ app.use(cors())
 app.use('/', routes)
 
 app.use((err, req, res, next)=>{
-    let status = err.status
+    let status = err.status || 500
     console.log(err);
     res.status(status).json(err.message) 
 })
