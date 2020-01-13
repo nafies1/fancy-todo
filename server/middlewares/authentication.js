@@ -8,8 +8,15 @@ module.exports = (req, res, next)=>{
         try {
             const authenticated = jwt.verify(accessToken, process.env.SECRET);
             User.findByPk(authenticated.id)
-                .then(_=>{
-                    next()
+                .then( user =>{
+                    if(user) {
+                        req.currentUserId = user._id
+                        next()
+                    } else {
+                        next({
+                            msg: '...'
+                        })
+                    } 
                 })
                 .catch(err=>{
                     next({
@@ -17,7 +24,6 @@ module.exports = (req, res, next)=>{
                             status: 401
                         })
                 })
-            next()
         } catch (err) {
             next(err)
         }
