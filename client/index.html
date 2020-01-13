@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Fancy Todo</title>
 </head>
 
 <body>
     <!-- LOGIN FORM -->
-    <div id="login-form" class="d-nones"> <!-- <<<<<<<<<<<<<<<<<<<<< Login form >>>>>>>>>>>>>>>> -->
+    <div id="login-form" class="d-none"> <!-- <<<<<<<<<<<<<<<<<<<<< Login form >>>>>>>>>>>>>>>> -->
       <div class="d-flex justify-content-center align-items-center login-container">
         <form class="login-form text-center">
             <h1 class="mb-5 font-weight-light text-uppercase">Login</h1>
@@ -67,6 +68,94 @@
       </div>
     </div>
     
+    <div id="todo-page">
+        <header>
+               <div id="branding">
+                  <h3><span class="highlight">Fancy</span> Todo</h3>
+               </div>
+         </header>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row d-flex justify-content-center container">
+                    <div class="col-12">
+                        <div class="card-hover-shadow-2x mb-3 card">
+                            <span class="highlight"> User Profile here :</span>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam veritatis perspiciatis dolor cumque praesentium quis nostrum deserunt doloribus fugiat consequuntur quaerat, corporis nihil tempora dignissimos eius animi, officiis sit ab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">|
+                <!-- Start of div Todo List -->
+                <div class="row d-flex justify-content-center container">
+                    <div class="col-12">
+                        <div class="card-hover-shadow-2x mb-3 card">
+                            <div class="card-header-tab card-header">
+                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Task Lists</div>
+                            </div>
+                            <div class="scroll-area-sm">
+                                <perfect-scrollbar class="ps-show-limits">
+                                    <div style="position: static;" class="ps ps--active-y">
+                                        <div class="ps-content">
+                                            <ul class=" list-group list-group-flush">
+                                                <li class="list-group-item"> <!-- 1 -->
+                                                    <div class="todo-indicator bg-warning"></div>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-2">
+                                                                <div class="custom-checkbox custom-control"> <input class="custom-control-input" id="exampleCustomCheckbox12" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox12">&nbsp;</label> </div>
+                                                            </div>
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-heading">Call Sam For payments <div class="badge badge-danger ml-2">Rejected</div>
+                                                                </div>
+                                                                <div class="widget-subheading"><i>By Bob</i></div>
+                                                            </div>
+                                                            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+                                                        </div>
+                                                    </div>
+                                                </li> <!-- 1 -->
+
+                                                <li class="list-group-item"> <!-- 2 -->
+                                                    <div class="todo-indicator bg-focus"></div>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-2">
+                                                                <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox1" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox1">&nbsp;</label></div>
+                                                            </div>
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-heading">Make payment to Bluedart</div>
+                                                                <div class="widget-subheading">
+                                                                    <div>By Johnny <div class="badge badge-pill badge-info ml-2">NEW</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+                                                        </div>
+                                                    </div>
+                                                </li> <!-- 2 -->                        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </perfect-scrollbar>
+                            </div>
+                            <div class="d-block text-right card-footer"><button class="mr-2 btn btn-link btn-sm">Cancel</button><button class="btn btn-primary">Add Task</button></div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- End of div Todo List -->
+            </div>
+            <div class="col-sm-5">|
+                    <div class="row d-flex justify-content-center container">
+                        <div class="col-12">
+                            <div class="card-hover-shadow-2x mb-3 card">
+                                <span class="highlight">Todos Details here</span>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam veritatis perspiciatis dolor cumque praesentium quis nostrum deserunt doloribus fugiat consequuntur quaerat, corporis nihil tempora dignissimos eius animi, officiis sit ab.</p>
+                            </div>
+                        </div>
+                    </div>                
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
