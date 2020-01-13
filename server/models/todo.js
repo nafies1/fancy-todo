@@ -15,6 +15,7 @@ const todoSchema = new Schema({
         type: Number,
         default: 0
     },
+    owner: String,
     created_date: Date,
     due_date: Date,
     completed_date: Date,
