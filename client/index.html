@@ -33,7 +33,7 @@
                 <a href="#">Forgot Password?</a>
             </div>
             <button id="loginButton" type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Log in</button>
-            <p class="mt-3 font-weight-normal">Don't have an account? <a href="#"><strong>Register Now</strong></a><br>
+            <p class="mt-3 font-weight-normal">Don't have an account? <a href="#" onclick="toRegister()"><strong>Register Now</strong></a><br>
                 <small>Or Sign In With Your Google Account</small> 
             </p>
             <!-- <p class="mt-3 font-weight-normal">Or Sign In With Your Google Account</a></p> -->
@@ -67,7 +67,8 @@
         </form>
       </div>
     </div>
-    
+
+    <!-- TODO PAGE -->
     <div id="todo-page">
         <header>
                <div id="branding">
@@ -91,7 +92,7 @@
                     <div class="col-12">
                         <div class="card-hover-shadow-2x mb-3 card">
                             <div class="card-header-tab card-header">
-                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Task Lists</div>
+                                <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Todo Lists</div>
                             </div>
                             <div class="scroll-area-sm">
                                 <perfect-scrollbar class="ps-show-limits">
@@ -106,9 +107,9 @@
                                                                 <div class="custom-checkbox custom-control"> <input class="custom-control-input" id="exampleCustomCheckbox12" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox12">&nbsp;</label> </div>
                                                             </div>
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Call Sam For payments <div class="badge badge-danger ml-2">Rejected</div>
+                                                                <div class="widget-heading">Belajar Ngoding <div class="badge badge-danger ml-2">Rejected</div>
                                                                 </div>
-                                                                <div class="widget-subheading"><i>By Bob</i></div>
+                                                                <div class="widget-subheading"><i>By nafies1</i></div>
                                                             </div>
                                                             <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
                                                         </div>
@@ -123,9 +124,9 @@
                                                                 <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox1" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox1">&nbsp;</label></div>
                                                             </div>
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">Make payment to Bluedart</div>
+                                                                <div class="widget-heading">Belajar Menggunakan CSS</div>
                                                                 <div class="widget-subheading">
-                                                                    <div>By Johnny <div class="badge badge-pill badge-info ml-2">NEW</div>
+                                                                    <div>By nafies1 <div class="badge badge-pill badge-info ml-2">NEW</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -138,7 +139,7 @@
                                     </div>
                                 </perfect-scrollbar>
                             </div>
-                            <div class="d-block text-right card-footer"><button class="mr-2 btn btn-link btn-sm">Cancel</button><button class="btn btn-primary">Add Task</button></div>
+                            <div class="d-block text-right card-footer"><!-- <button class="mr-2 btn btn-link btn-sm">Cancel</button> --> <button class="btn btn-primary">Add Task</button></div>
                         </div>
                     </div>
                 </div> 
@@ -155,7 +156,14 @@
                     </div>                
             </div>
         </div>
+
+        <footer>
+            <p>Fancy Todo &copy; 2020</p>
+         </footer>
+
     </div>
+
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

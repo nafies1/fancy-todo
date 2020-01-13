@@ -1,8 +1,9 @@
+let access_token
+
 function onSignIn(googleUser) {
     const id_token = googleUser.getAuthResponse().id_token;
     console.log(id_token);
     
-    /*
     $.ajax({
         method : 'POST',
         url : 'http://localhost:3000/user/google-sign',
@@ -11,15 +12,15 @@ function onSignIn(googleUser) {
         }
       })
       .done(token => {
-        // console.log(token);
-        // localStorage.setItem('token', token)
-        // access_token = token
-        // toggleLogin(0)
-        // togglePage(1)
+        console.log(token);
+        localStorage.setItem('token', token.token)
+        access_token = token.token
+        toggleLogin(0)
+        togglePage(1)
       })
       .fail( err => {
         console.log(err);
-      }) */
+      })
   }
 
 function signOut() {
@@ -27,6 +28,10 @@ function signOut() {
     auth2.signOut().then(function () {
         console.log('User signed out.');
     });
+}
+
+function toRegister(){
+  
 }
 
 function login(){
@@ -56,8 +61,12 @@ function login(){
        </div>`);
       }
     })
-      .done(function (data) {
-        console.log(data);
+      .done(function (token) {
+        console.log(token);
+        localStorage.setItem('token', token.token)
+        access_token = token.token
+        toggleLogin(0)
+        togglePage(1)
        
       })
       .fail(function (err) {
@@ -91,8 +100,12 @@ function register(){
        </div>`);
       }
     })
-      .done(function (data) {
-        console.log(data);
+      .done(function (token) {
+        console.log(token);
+        localStorage.setItem('token', token.token)
+        access_token = token.token
+        toggleRegister(0)
+        togglePage(1)
        
       })
       .fail(function (err) {
